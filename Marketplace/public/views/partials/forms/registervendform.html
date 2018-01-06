@@ -1,0 +1,208 @@
+<h2>Vos coordonnées</h2>
+
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Civilité :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="radio" placeholder=" " ng-model='vm.form.genre' name='genre' /> &nbsp;&nbsp; .M &nbsp;
+        <input type="radio" placeholder=" " ng-model='vm.form.genre' name='genre' /> &nbsp;&nbsp; .Mme &nbsp;
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Nom* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" placeholder=" " ng-model='vm.form.nom' name='nom' required/>
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.nom.$error" ng-show="form.nom.$touched">
+        <p class='error' ng-message="required">Veuillez saisir un nom.</p>
+    </div>
+    <div class="clearfix"> </div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Prenom* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" placeholder=" " ng-model='vm.form.prenom' name='prenom' required/>
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.prenom.$error" ng-show="form.prenom.$touched">
+        <p class='error' ng-message="required">Veuillez saisir un prénom.</p>
+    </div>
+    <div class="clearfix"> </div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Nom de boutique* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" placeholder=" " ng-model='vm.form.boutique' name='boutique' required />
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.boutique.$error" ng-show="form.boutique.$touched">
+        <p class='error' ng-message="required">Veuillez renseigner le nom de la boutique.</p>
+    </div>
+    <div class="clearfix"> </div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Rebrique* :</h4>
+    </div>
+    <div class="sign-up2">
+        <select class='show-tick form-control select' ng-model='vm.form.rebrique' name='rebrique' required>
+            <option value="">Sélectionner la rubrique associée à votre activité professionnelle</option>             
+            <option value="EMPLOI">EMPLOI</option>            
+            <option value="VEHICULES">VEHICULES</option>            
+            <option value="IMMOBILIER">IMMOBILIER</option>            
+            <option value="VACANCES">VACANCES</option>           
+            <option value="MULTIMEDIA">MULTIMEDIA</option>          
+            <option value="MAISON">MAISON</option>         
+            <option value="LOISIRS">LOISIRS</option>    
+            <option value="MATERIEL PROFESSIONNEL">MATERIEL PROFESSIONNEL</option>                
+            <option value="SERVICES">SERVICES</option>   
+        </select>
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.rebrique.$error" ng-show="form.rebrique.$touched">
+        <p class='error' ng-message="required">Sélectionnez un secteur d'activité.</p>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Adresse* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" placeholder=" " minlength='6' ng-model='vm.form.adresse' name='adresse' required />
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.adresse.$error" ng-show="form.adresse.$touched">
+        <p class='error' ng-message="required">Veuillez insérer votre adresse.</p>
+        <p class='error' ng-message="minlength">L' adresse que vous avez renseigné n'est pas valide.</p>
+
+    </div>
+    <div class="clearfix"> </div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Ville* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" placeholder=" " ng-model='vm.form.ville' name='ville' required />
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.ville.$error" ng-show="form.ville.$touched">
+        <p class='error' ng-message="required">Veuillez insérer un nom du ville.</p>
+    </div>
+    <div class="clearfix"> </div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Code Postal* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" placeholder=" " pattern='\d*' ng-model='vm.form.code_postal' name='code_postal' required />
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.code_postal.$error" ng-show="form.code_postal.$touched">
+        <p class='error' ng-message="required">Veuillez insérer votre code postal.</p>
+        <p class='error' ng-message="pattern">Le code postal que vous avez renseigné n'est pas valide.</p>
+    </div>
+    <div class="clearfix"> </div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Telephone* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" class="phone" pattern='\d*' minlength='8' name='telephone' ng-model='vm.form.telephone' required>
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.telephone.$error" ng-show="form.telephone.$touched">
+        <p class='error' ng-message="required">Veuillez insérer un numéro de téléphone.</p>
+        <p class='error' ng-message="minlength">Votre numéro de téléphone doit comporter 8 chiffres, sans espace ni séparateur.</p>
+        <p class='error' ng-message="pattern">Le téléphone contient des caractères non autorisés.</p>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+<h2>Votre email et mot de passe</h2>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Adresse email* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' class="email" placeholder="" ng-model='vm.form.email' required>
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.email.$error" ng-show="form.email.$touched">
+        <p class='error' ng-message="required">Veuillez insérer une adresse email.</p>
+        <p class='error' ng-message="pattern">Vérifiez l'adresse email, son format n'est pas valide.</p>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Mot de passe* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="password" placeholder="" minlength='6' name='password' ng-model='vm.form.password' required/>
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.password.$error" ng-show="form.password.$touched">
+        <p class='error' ng-message="required">Veuillez insérer votre mot de passe.</p>
+        <p class='error' ng-message="minlength">Votre mot de passe doit comprendre 6 caractères ou plus.</p>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Confirmer le mot de passe* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="password" placeholder=" " minlength='6' name='confirm_password' ng-model='vm.form.confirm_password' required />
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.confirm_password.$error" ng-show="form.confirm_password.$touched">
+        <p class='error' ng-message="required">Veuillez insérer votre mot de passe.</p>
+        <p class='error' ng-message="minlength">Votre mot de passe doit comprendre 6 caractères ou plus.</p>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up2">
+        <input type="checkbox" required=" " /> « J'accepte les <a href="/regles-d-utilisation"><strong>Conditions Générales </strong></a>
+
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<div ng-if='vm.message' class='errors'>
+    <flash-message name='flash'></flash-message>
+    <div class="clearfix"> </div>
+</div>
+
+<div class="sub_home">
+    <div class="sub_home_left">
+        <input type="submit" value="Créer mon Compte Personnel">
+    </div>
+    <div class="sub_home_right">
+        <p>Retour a la page <a href="/">d'acceuil</a></p>
+    </div>
+    <div class="clearfix"> </div>
+
+</div>

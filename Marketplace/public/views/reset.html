@@ -1,0 +1,105 @@
+<div class="header" ng-include="'views/partials/header.html'">
+</div>
+<section>
+    <div id="page-wrapper" class="sign-in-wrapper" ng-controller='resetCtrl as vm'>
+        <div class="graphs">
+            <div class="sign-in-form">
+                <div class="sign-in-form-top">
+                    <h1>Réinitialiser votre mot de passe</h1>
+                </div>
+                <div class="signin">
+                    <form ng-if='!vm.token' ng-submit='vm.submit()' ng-model='vm.form' name='form'>
+                        <div class="sign-u">
+                            <div class="sign-up1">
+                                <h4>Adresse email* :</h4>
+                            </div>
+                            <div class="sign-up2">
+                                <input type="text" name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' class="email" placeholder="" ng-model='vm.form.email' required>
+                            </div>
+                            <div class="clearfix"> </div>
+                            <div class='errors' ng-messages="form.email.$error" ng-show="form.email.$touched">
+                                <p class='error' ng-message="required">Veuillez insérer une adresse email.</p>
+                                <p class='error' ng-message="pattern">Vérifiez l'adresse email, son format n'est pas valide.</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div ng-if='vm.message' class='errors'>
+                            <flash-message name='flash'></flash-message>
+                            <div class="clearfix"> </div>
+                        </div>
+
+                        <div class="sub_home">
+                            <div class="sub_home_left">
+                                <input type="submit" value="Valider">
+                            </div>
+                            <div class="sub_home_right">
+                                <p>Retour a la page <a href="/">d'acceuil</a></p>
+                            </div>
+                            <div class="clearfix"> </div>
+
+                        </div>
+
+
+                    </form>
+                    <form ng-if='vm.token' ng-submit='vm.reset()' ng-model='vm.form' name='form'>
+
+                        <div class="sign-u">
+                            <div class="sign-up1">
+                                <h4>Mot de passe* :</h4>
+                            </div>
+                            <div class="sign-up2">
+                                <input type="password" placeholder="" minlength='6' name='password' ng-model='vm.form.password' required/>
+                            </div>
+                            <div class="clearfix"> </div>
+                            <div class='errors' ng-messages="form.password.$error" ng-show="form.password.$touched">
+                                <p class='error' ng-message="required">Veuillez insérer votre mot de passe.</p>
+                                <p class='error' ng-message="minlength">Votre mot de passe doit comprendre 6 caractères ou plus.</p>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+                        <div class="sign-u">
+                            <div class="sign-up1">
+                                <h4>Confirmer le mot de passe* :</h4>
+                            </div>
+                            <div class="sign-up2">
+                                <input type="password" placeholder=" " minlength='6' name='confirm_password' ng-model='vm.form.confirm_password' required />
+                            </div>
+                            <div class="clearfix"> </div>
+                            <div class='errors' ng-messages="form.confirm_password.$error" ng-show="form.confirm_password.$touched">
+                                <p class='error' ng-message="required">Veuillez insérer votre mot de passe.</p>
+                                <p class='error' ng-message="minlength">Votre mot de passe doit comprendre 6 caractères ou plus.</p>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                        <div ng-if='vm.message' class='errors'>
+                            <flash-message name='flash'></flash-message>
+                            <div class="clearfix"> </div>
+                        </div>
+
+                        <div class="sub_home">
+                            <div class="sub_home_left">
+                                <input type="submit" value="Valider">
+                            </div>
+                            <div class="sub_home_right">
+                                <p>Retour a la page <a href="/">d'acceuil</a></p>
+                            </div>
+                            <div class="clearfix"> </div>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer section start-->
+    <footer ng-include="'views/partials/footer.html'">
+    </footer>
+
+    <!--footer section end-->
+</section>

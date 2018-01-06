@@ -1,0 +1,87 @@
+<div class="header" ng-include="'views/partials/header.html'">
+</div>
+
+<div ng-include="'views/partials/banner.html'" class="banner text-center">
+</div>
+<!--single-page-->
+<div class="single-page main-grid-border" ng-controller='articleCtrl as vm'>
+    <div class="container">
+        <ol class="breadcrumb" style="margin-bottom: 5px;">
+            <li><a href="/">Acceuil</a></li>
+            <li><a href="/articles">Toutes les articles</a></li>
+            <li class="active"><a href="/categories/{{vm.article.categorie}}">{{vm.article.categorie}}</a></li>
+            <li class="active">{{vm.article.titre}}</li>
+        </ol>
+        <div class="product-desc">
+            <div class="col-md-7 product-view">
+                <h2>{{vm.article.titre}}</h2>
+                <p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">Ville</a>, <a href="/villes/{{vm.article.ville}}">{{vm.article.ville}}</a>| Ajouté à {{vm.article.created_at | date: 'medium'}}</p>
+                <div class="flexslider">
+                    <jk-carousel data="vm.images" current-index="0" item-template-url="'views/partials/silder.html'" max-width="700" max-height="400">
+                    </jk-carousel>
+                </div>
+                <div class="product-details">
+                    <h4>Boutique : <a href="#">{{vm.article._user.boutique}}</a></h4>
+                    <h4>Adresse : <a href="#">{{vm.article.adresse}}</a></h4>
+                    <p><strong>Description</strong>
+                        <pre>{{vm.article.description}}</pre>
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-md-5 product-details-grid">
+                <div class="item-price">
+                    <div class="product-price">
+                        <p class="p-price" ng-if='vm.article.prix'>Prix</p>
+                        <h3 class="rate" ng-if='vm.article.prix'>$ {{vm.article.prix}}</h3>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="itemtype">
+                        <p class="p-price">Catégorie</p>
+                        <h4>{{vm.article.categorie}}</h4>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="itemtype">
+                        <span ng-click='vm.save(vm.article)' class='fa fa-heart'></span>
+                        <a href="http://www.facebook.com/sharer/sharer.php?u=http://localhost:8080/article/{{vm.article._id}}" target="_blank">
+                        <span class='fa fa-facebook'>
+                </span>
+                            </a>
+                        <a href="http://twitter.com/share?url=http://localhost:8080/article/{{vm.article._id}}" target="_blank">
+                        <span class='fa fa-twitter'></span>
+                        </a>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="itemtype">
+                        <label for="quantite"></label>
+                        <input type='number' class='input' name='quantite' ng-model='vm.form.quantite' min="1" max='50' />
+                        <br/>
+                        <a class='deposer' ng-click='vm.add_panier(vm.article)'>
+                            Ajouter au panier
+                            </a>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="condition">
+                        <flash-message name='flash'></flash-message>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+                <div class="interested text-center">
+                    <h4>Intéressé par cette article?<small> Contactez le vendeur!</small></h4>
+                    <p><i class="glyphicon glyphicon-earphone" ng-if='!vm.article.tel_masque'></i>{{vm.article.telephone}}</p>
+                    <p><i class="glyphicon glyphicon-envelope"></i>{{vm.article.email}}</p>
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--//single-page-->
+<!--footer section start-->
+<footer ng-include="'views/partials/footer.html'">
+</footer>
+<!--footer section end-->

@@ -1,0 +1,35 @@
+<div class="header" ng-include="'views/partials/header.html'">
+</div>
+<section>
+    <div id="page-wrapper" class="sign-in-wrapper" ng-controller='loginCtrl as vm'>
+        <div class="graphs">
+            <div class="sign-in-form">
+                <div class="sign-in-form-top">
+                    <h1>Se connecter</h1>
+                </div>
+                <div class="signin">
+                    <div class="signin-rit">
+                        <span class="checkbox1">
+									 mot de passe oublié ?</label>
+								</span>
+                        <p><a href="/reset">cliquez ici</a> </p>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <form ng-include="'views/partials/forms/loginform.html'" ng-submit='vm.submit()'>
+                    </form>
+                </div>
+                <div class="new_people">
+                    <h2>Vous n'avez pas de compte ?
+                    </h2>
+                    <p></p>
+                    <a ng-click='vm.open("md")'>inscrivez-vous!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer section start-->
+    <footer ng-include="'views/partials/footer.html'">
+    </footer>
+
+    <!--footer section end-->
+</section>

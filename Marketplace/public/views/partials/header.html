@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller='headerCtrl as vm'>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand logo" href="/">MarketPlace</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li> <a ng-if='vm.isLoggedIn && vm.vendeur' href="/user">Tableau de bord</a>
+                </li>
+                <li> <a href="/articles">Articles</a>
+                </li>
+                <li> <a href="/enregistrer">articles enregistrées</a>
+
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li ng-if='!vm.isLoggedIn'> <a class="deposer" href="/login">Déposer une article</a>
+                </li>
+                <li ng-if='vm.isLoggedIn'> <a class="deposer" href="/user/articles/deposer">Déposer une article</a>
+                </li>
+                <li ng-if='vm.isLoggedIn && !vm.vendeur'>
+                    <a class="deposer" href="/panier">Panier</a>
+                </li>
+
+                <li class="dropdown">
+                    <a ng-if='!vm.isLoggedIn' class='account' href="/login">Mon compte</a>
+
+                    <a ng-if='vm.isLoggedIn' href="#" class="dropdown-toggle account" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon compte <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li> <a href='/profile'>Paramètres</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a ng-click='vm.logout()'>Se déconnecter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>

@@ -1,0 +1,56 @@
+<div class="header" ng-include="'views/partials/header.html'">
+</div>
+<div class="banner text-center">
+    <div class="container">
+        <h1>Sell or Advertise <span class="segment-heading">    anything online </span> with Resale</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <a href="post-ad.html">Post Free Ad</a>
+    </div>
+</div>
+<!-- Submit Ad -->
+<div class="submit-ad main-grid-border" ng-controller='editCtrl as vm'>
+    <div class="container">
+        <h2 class="head">
+            Editer votre article
+        </h2>
+        <div class="post-ad-form">
+            <form name='form' ng-model='vm.form' ng-submit='vm.submit()'>
+                <label>Catégorie <span>*</span></label>
+                <select class="" ng-model='vm.form.categorie' disabled>
+					  <option value=''>Choisir une catégorie</option>
+                    <optgroup label='VEHICULES'>
+                      <option value='Equipements vehicules'>Equipements vehicules</option>                        
+                    </optgroup>
+                    <optgroup label='MULTIMEDIA'>
+					  <option value='Informatique'>Informatique</option>                        
+					  <option value='Consoles & Jeux vidéo'>Consoles & Jeux vidéo</option>                        
+					  <option value='Image & Son'>Image & Son</option>                        
+					  <option value='Téléphonie'>Téléphonie</option>                        
+                    </optgroup>
+                    <optgroup label='AUTRES'>
+					  <option value='Matériels Professionnels'>Matériels Professionnels</option>                        
+					  <option value='Loisirs'>Loisirs</option>                        
+					  <option value='Services'>Services</option>                        
+					  <option value='Autres'>Autres</option>                        
+                    </optgroup>
+					</select>
+                <div class="clearfix"></div>
+                <div ng-if='vm.form.categorie ==="Autres"' ng-include="'views/partials/forms/addforms/autresform.html'"></div>
+                <div ng-if='vm.form.categorie ==="Consoles & Jeux vidéo"' ng-include="'views/partials/forms/addforms/consolejeuxform.html'"></div>
+                <div ng-if='vm.form.categorie ==="Image & Son"' ng-include="'views/partials/forms/addforms/imagesonform.html'"></div>
+                <div ng-if='vm.form.categorie ==="Informatique"' ng-include="'views/partials/forms/addforms/informatiqueform.html'"></div>
+                <div ng-if='vm.form.categorie ==="Loisirs"' ng-include="'views/partials/forms/addforms/loisirsform.html'"></div>
+                <div ng-if='vm.form.categorie ==="Matériels Professionnels"' ng-include="'views/partials/forms/addforms/materielproform.html' "></div>
+                <div ng-if='vm.form.categorie ==="Services"' ng-include="'views/partials/forms/addforms/servicesform.html'"></div>
+                <div ng-if='vm.form.categorie ==="Téléphonie"' ng-include="'views/partials/forms/addforms/telephonieform.html'"></div>
+            </form>
+            <div ng-if='vm.message' class='errors'>
+                <flash-message name='flash'></flash-message>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<footer ng-include=" 'views/partials/footer.html' ">
+</footer>

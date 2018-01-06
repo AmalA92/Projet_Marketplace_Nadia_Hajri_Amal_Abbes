@@ -1,0 +1,57 @@
+<div class="header" ng-include="'views/partials/header.html'">
+</div>
+<section>
+    <div id="page-wrapper" class="sign-in-wrapper" ng-controller='panierCtrl as vm'>
+        <div class="graphs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Votre panier</h4>
+                        <div ng-if='vm.articles && !vm.articles.length'>
+                            Votre panier est vide
+                        </div>
+
+                        <div ng-if='vm.articles.length' class="table-responsive">
+                            <table id="mytable" class="table table-bordred table-striped">
+                                <thead>
+                                    <th>#</th>
+                                    <th>Titre</th>
+                                    <th>Quantite</th>
+                                    <th>Prix unitaire</th>
+                                    <th>Actions</th>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat='article in vm.articles'>
+                                        <td>{{$index}}</td>
+                                        <td>{{article.titre}}</td>
+                                        <td>{{article.quantite}}</td>
+                                        <td>{{article.prix}}</td>
+
+                                        <td>
+                                            <a class="btn btn-info btn-xs" href='/article/{{article._id}}'><span class="fa fa-eye"></span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <h2>Prix totale : {{vm.total}}</h2>
+                            <flash-message name='flash'></flash-message>
+                            <a class='deposer' ng-click='vm.achat()'>Valider</a>
+
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!--footer section start-->
+    <footer ng-include="'views/partials/footer.html'">
+    </footer>
+
+    <!--footer section end-->
+</section>

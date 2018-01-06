@@ -1,0 +1,22 @@
+<div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="false" style="display: block;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button ng-click='cancel()' type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Voulez vous supprimer cette annonce ?</h4>
+            </div>
+            <div class="modal-body">
+                <div class='btn-toolbar text-center' ng-if='!message'>
+                    <a class='btn btn-success' ng-click='remove(id)'>Oui</a>
+                    <a class='btn btn-danger' ng-click='cancel()'>Non</a>
+                </div>
+                <div ng-if='message' class='errors'>
+                    <flash-message name='flash'></flash-message>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

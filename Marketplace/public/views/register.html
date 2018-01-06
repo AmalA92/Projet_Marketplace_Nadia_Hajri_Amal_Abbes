@@ -1,0 +1,20 @@
+<div class="header" ng-include="'views/partials/header.html'">
+</div>
+<section>
+    <div id="page-wrapper" class="sign-in-wrapper" ng-controller='registerCtrl as vm'>
+        <div class="graphs">
+            <div class="sign-up">
+                <h1>Créer un compte</h1>
+                <form ng-model='vm.form' name='form' ng-if='vm.type == "vendeur"' ng-include="'views/partials/forms/registervendform.html'" ng-submit='vm.submit()'>
+                </form>
+                <form ng-model='vm.form' name='form' ng-if='vm.type == "acheteur"' ng-include="'views/partials/forms/registerachform.html'" ng-submit='vm.submit()'>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!--footer section start-->
+    <footer ng-include="'views/partials/footer.html'">
+    </footer>
+    <!--footer section end-->
+</section>

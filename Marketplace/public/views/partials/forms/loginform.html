@@ -1,0 +1,23 @@
+<div class="log-input">
+    <div class="log-input-left">
+        <input type="text" class="user" placeholder='Adresse email' name='email' 
+               pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' ng-model='vm.form.email' required />
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<div class="log-input">
+    <div class="log-input-left">
+        <input type="password" class="lock" placeholder='Mot de passe' minlength='6' name='password' ng-model='vm.form.password' required />
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<div ng-if='vm.message' class='errors'>
+    <flash-message name='flash'></flash-message>
+    <div class="clearfix"> </div>
+</div>
+<div ng-if='vm.resend_button'>
+    <a class='account' ng-click='vm.renvoyer()'> Renvoyer </a>
+    <div class="clearfix"> </div>
+
+</div>
+<input type="submit" value="Se connecter">

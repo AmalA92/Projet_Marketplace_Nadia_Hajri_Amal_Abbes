@@ -1,0 +1,119 @@
+<label>Titre <span>*</span></label>
+<input type="text" class="phone" placeholder="" ng-model='vm.form.titre' name='titre' minlength='8' required>
+<div class="clearfix"></div>
+<div class='errors' ng-messages="form.titre.$error" ng-show="form.titre.$touched">
+    <p class='error' ng-message="required">Veuillez donner un titre à votre annonce.</p>
+    <p class='error' ng-message="minlength">Veuillez détailler plus précisément votre titre.</p>
+</div>
+<div class="clearfix"></div>
+<label>Prix <span>*</span></label>
+<input type="text" class="phone" pattern="\d*" placeholder="" name='prix' ng-model='vm.form.prix' required>
+<div class="clearfix"></div>
+<div class='errors' ng-messages="form.prix.$error" ng-show="form.prix.$touched">
+    <p class='error' ng-message="required">Veuillez indiquer le prix correspondant à votre annonce.</p>
+    <p class='error' ng-message="pattern">Le prix contient des caractères non autorisés.</p>
+</div>
+<div class="clearfix"></div>
+<label>Description <span>*</span></label>
+<textarea class="mess" placeholder="Description du poste" minlength='10' name='description' ng-model='vm.form.description' required></textarea>
+<div class="clearfix"></div>
+<div class='errors' ng-messages="form.description.$error" ng-show="form.description.$touched">
+    <p class='error' ng-message="required">Veuillez rédiger un texte d'annonce.</p>
+    <p class='error' ng-message="minlength">Vous devez détailler plus précisement votre annonce.</p>
+</div>
+<div class="clearfix"></div>
+<div class="upload-ad-photos">
+    <label>Photo principale :</label>
+    <div class="photos-upload-view">
+        <div>
+            <input type="file" id="fileselect" name="photo_principale" ngf-select ng-model='vm.form.photo_principale' />
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="upload-ad-photos">
+    <label>Photo 1 :</label>
+    <div class="photos-upload-view">
+        <div>
+            <input type="file" id="fileselect" name="photo1" ngf-select ng-model='vm.form.photo1' />
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="upload-ad-photos">
+    <label>Photo 2 :</label>
+    <div class="photos-upload-view">
+        <div>
+            <input type="file" id="fileselect" name="photo2" ngf-select ng-model='vm.form.photo2' />
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="upload-ad-photos">
+    <label>Photo 3 :</label>
+    <div class="photos-upload-view">
+        <div>
+            <input type="file" id="fileselect" name="photo3" ngf-select ng-model='vm.form.photo3' />
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="upload-ad-photos">
+    <label>Photo 4 :</label>
+    <div class="photos-upload-view">
+        <div>
+            <input type="file" id="fileselect" name="photo4" ngf-select ng-model='vm.form.photo4' />
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="personal-details">
+    <label>Ville <span>*</span></label>
+    <select name='ville' ng-model='vm.form.ville' required>
+<option value="">Nom de ville</option>
+            <optgroup label='Tunisie'>
+<option value="Tunis">Tunis</option>
+<option value="Sousse">Sousse</option>
+<option value="Sfax">Sfax</option>                    
+                    </optgroup>
+</select>
+    <div class="clearfix"></div>
+    <div class='errors' ng-messages="form.ville.$error" ng-show="form.ville.$touched">
+        <p class='error' ng-message="required">Veuillez indiquer le nom de ville.</p>
+    </div>
+    <div class="clearfix"></div>
+    <label>Adresse <span>*</span></label>
+    <input type="text" class="name" placeholder="" minlength='6' name='adresse' ng-model='vm.form.adresse' required>
+    <div class="clearfix"></div>
+    <div class='errors' ng-messages="form.adresse.$error" ng-show="form.adresse.$touched">
+        <p class='error' ng-message="required">Veuillez insérer une adresse.</p>
+        <p class='error' ng-message="minlength">Veuillez insérer une adresse valide.</p>
+        <p class='error' ng-message="pattern">Le téléphone contient des caractères non autorisés.</p>
+    </div>
+    <div class="clearfix"></div>
+    <label>Téléphone <span>*</span></label>
+    <input type="text" class="phone" pattern='\d*' minlength='8' name='telephone' ng-model='vm.form.telephone' required>
+    <div class="clearfix"></div>
+    <div class='errors' ng-messages="form.telephone.$error" ng-show="form.telephone.$touched">
+        <p class='error' ng-message="required">Veuillez insérer un numéro de téléphone.</p>
+        <p class='error' ng-message="minlength">Votre numéro de téléphone doit comporter 8 chiffres, sans espace ni séparateur.</p>
+        <p class='error' ng-message="pattern">Le téléphone contient des caractères non autorisés.</p>
+    </div>
+    <div class="clearfix"></div>
+
+    <p class="post-terms">
+        <input type="checkbox" class="phone" ng-model='vm.form.tel_masque'> Masquer le numéro de téléphone dans l'annonce.
+    </p>
+    <div class="clearfix"></div>
+    <label>Adresse email<span>*</span></label>
+    <input type="text" name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' class="email" placeholder="" ng-model='vm.form.email' required>
+    <div class="clearfix"></div>
+    <div class='errors' ng-messages="form.email.$error" ng-show="form.email.$touched">
+        <p class='error' ng-message="required">Veuillez insérer une adresse email.</p>
+        <p class='error' ng-message="pattern">Vérifiez l'adresse email, son format n'est pas valide.</p>
+    </div>
+    <div class="clearfix"></div>
+    <p class="post-terms">En cliquant sur le bouton<strong> VALIDER </strong> , vous acceptez nos <a href="/regles-d-utilisation" target="_blank">conditions d 'utilisation </a></p>
+    <input type="submit" value="Valider">
+    <div class="clearfix">
+    </div>

@@ -1,0 +1,71 @@
+<div class="header" ng-include="'views/partials/header.html'">
+</div>
+<div ng-include="'views/partials/banner.html'" class="banner text-center">
+</div>
+<!-- Products -->
+<div class="total-ads main-grid-border" ng-controller='categoriesCtrl as vm'>
+    <div class="container">
+        <form ng-model='vm.form' ng-include="'views/partials/forms/searchform.html'">
+        </form>
+
+        <ol class="breadcrumb" style="margin-bottom: 5px;">
+            <li><a href="/">Acceuil</a></li>
+            <li class="active">{{vm.categorie}}</li>
+        </ol>
+        <div class="ads-grid">
+            <div class="side-bar col-md-3">
+                <!-- -->
+            </div>
+            <div class="ads-display col-md-9">
+                <div class="wrapper">
+                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                        <md-tabs md-dynamic-height md-border-bottom id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+                            <md-tab label="Toutes" role="presentation" class="active">
+                                <md-content class='md-psearching'>
+                                    <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                                        <div>
+                                            <div id="container">
+                                                <div class="clearfix"></div>
+                                                <ul class="list">
+                                                    <a ng-repeat='article in vm.articles' href="/article/{{article._id}}">
+                                                        <li>
+                                                            <img src="/images/{{article.photo_principale}}" title="" alt="" />
+                                                            <section class="list-left">
+                                                                <h5 class="title">{{article.titre}}</h5>
+                                                                <span ng-if='article.prix' class="adprice">${{article.prix}}</span>
+
+                                                                <p class="catpath">{{article.categorie}}</p>
+                                                            </section>
+                                                            <section class="list-right">
+                                                                <span class="date">{{article.created_at | date: 'medium'}}</span>
+                                                                <span class="cityname">{{article.ville}}</span>
+                                                            </section>
+                                                            <div class="clearfix"></div>
+                                                        </li>
+                                                    </a>
+                                                </ul>
+
+                                                <div class="clearfix"></div>
+                                                <div class='text-center' paging page="vm.currentPage" page-size="1" total="vm.total" paging-action="vm.pageChange('clicked', page)">
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                </md-content>
+                            </md-tab>
+                        </md-tabs>
+                        <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- // Products -->
+<footer ng-include="'views/partials/footer.html'">
+</footer>

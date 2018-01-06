@@ -1,0 +1,1 @@
+angular.module("classified-ads", ["ngRoute", "ngFileUpload", "angular-google-analytics", "ngMaterial", "bw.paging", "ngAria", "ngMessages", "ngAnimate", "ngFlash", "routes", "commomModule", "articleModule", "userModule"]);

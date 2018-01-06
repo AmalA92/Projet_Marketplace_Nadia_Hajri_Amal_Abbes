@@ -1,0 +1,69 @@
+<h2>Votre email et mot de passe</h2>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Adresse email* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="text" name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' class="email" placeholder="" ng-model='vm.form.email' required>
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.email.$error" ng-show="form.email.$touched">
+        <p class='error' ng-message="required">Veuillez insérer une adresse email.</p>
+        <p class='error' ng-message="pattern">Vérifiez l'adresse email, son format n'est pas valide.</p>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Mot de passe* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="password" placeholder="" minlength='6' name='password' ng-model='vm.form.password' required/>
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.password.$error" ng-show="form.password.$touched">
+        <p class='error' ng-message="required">Veuillez insérer votre mot de passe.</p>
+        <p class='error' ng-message="minlength">Votre mot de passe doit comprendre 6 caractères ou plus.</p>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+<div class="sign-u">
+    <div class="sign-up1">
+        <h4>Confirmer le mot de passe* :</h4>
+    </div>
+    <div class="sign-up2">
+        <input type="password" placeholder=" " minlength='6' name='confirm_password' ng-model='vm.form.confirm_password' required />
+    </div>
+    <div class="clearfix"> </div>
+    <div class='errors' ng-messages="form.confirm_password.$error" ng-show="form.confirm_password.$touched">
+        <p class='error' ng-message="required">Veuillez insérer votre mot de passe.</p>
+        <p class='error' ng-message="minlength">Votre mot de passe doit comprendre 6 caractères ou plus.</p>
+    </div>
+    <div class="clearfix"></div>
+
+</div>
+<div class="sign-u">
+</div>
+<div class="sign-u">
+    <div class="sign-up2">
+        <input type="checkbox" required=" " /> « J'accepte les <a href="/regles-d-utilisation"><strong>Conditions Générales</strong></a>
+
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<div ng-if='vm.message' class='errors'>
+    <flash-message name='flash'></flash-message>
+    <div class="clearfix"> </div>
+</div>
+
+<div class="sub_home">
+    <div class="sub_home_left">
+        <input type="submit" value="Créer mon Compte Personnel">
+    </div>
+    <div class="sub_home_right">
+        <p>Retour a la page <a href="/">d'acceuil</a></p>
+    </div>
+    <div class="clearfix"> </div>
+
+</div>

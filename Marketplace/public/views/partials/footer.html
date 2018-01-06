@@ -1,0 +1,72 @@
+<div class="footer-top" ng-controller='footerCtrl as vm'>
+    <div class="container">
+        <div class="foo-grids">
+            <div class="col-md-3 footer-grid">
+                <h4 class="footer-head">Qui nous sommes</h4>
+                <p>Marketplace est un site web de articles gratuites où vous pouvez presque tout vendre et tout acheter.</p>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4 class="footer-head">Aide</h4>
+                <ul>
+                    <li><a href="/services">Service de  marketplace</a></li>
+                    <li><a href="/regles-d-utilisation">Règles d’utilisation</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4 class="footer-head">Contactez nous</h4>
+                <address>
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-earphone"></span></li>
+									<li>+216 0000000</li>
+									<div class="clearfix"></div>
+								</ul>	
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-envelope"></span></li>
+									<li><a >contact@marketplace.com</a></li>
+									<div class="clearfix"></div>
+								</ul>						
+							</address>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <form ng-model='vm.form' ng-submit='vm.submit()'>
+                    <ul>
+                        <li><input type='email' ng-model='vm.form.email' placeholder="Email" name='email' required></li>
+                        <li><input type='text' ng-model='vm.form.titre' name='titre' placeholder="Titre" required></li>
+                        <li><textarea ng-model='vm.form.message' name='message' placeholder="Message" required></textarea></li>
+                        <li>
+                            <flash-message name='contact'></flash-message>
+                        </li>
+
+                        <li>
+                            <button type='submit' class='deposer'>Envoyer</button>
+                        </li>
+
+                    </ul>
+                </form>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom text-center" ng-controller='footerCtrl as vm'>
+    <div class="container">
+        <div class="footer-logo">
+            <a href="/">MarketPlace</a>
+        </div>
+        <div class="footer-social-icons">
+            <ul>
+                <li><a class="facebook" href="https://www.facebook.com"><span>Facebook</span></a></li>
+                <li><a class="twitter" href="#"><span>Twitter</span></a></li>
+                <li><a class="flickr" href="#"><span>Flickr</span></a></li>
+                <li><a class="googleplus" href="#"><span>Google+</span></a></li>
+                <li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+            </ul>
+        </div>
+        <div class="copyrights">
+            <p> © {{ vm.year }} Marketplace. Tous les droits sont réservés </a>
+            </p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

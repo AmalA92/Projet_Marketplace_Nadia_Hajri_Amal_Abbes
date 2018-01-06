@@ -1,0 +1,122 @@
+<div class="header" ng-include="'views/partials/header.html'">
+</div>
+<div class='container'>
+    <form ng-controller='homeCtrl as vm' ng-model='vm.form' ng-include="'views/partials/forms/searchform.html'">
+    </form>
+
+</div>
+<!-- content-starts-here -->
+<div class="content" ng-controller='homeCtrl as vm'>
+    <div class="categories">
+        <div class="container">
+            <h2>Choisissez une catégorie</h2>
+
+            <div class="col-md-2 focus-grid">
+                <a href="/categories/Informatique">
+                    <div class="focus-border">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i class="fa fa-laptop"></i></div>
+                            <h4 class="clrchg"> Informatique</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 focus-grid">
+                <a href="/categories/Téléphonie">
+                    <div class="focus-border">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i class="fa fa-mobile"></i></div>
+                            <h4 class="clrchg">Téléphonie</h4>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 focus-grid">
+                <a href="/categories/Consoles & Jeux vidéo">
+                    <div class="focus-border">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i class="fa fa-gamepad"></i></div>
+                            <h4 class="clrchg">Consoles & Jeux vidéo</h4>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 focus-grid">
+                <a href="/categories/Loisirs">
+                    <div class="focus-border">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i class="fa fa-book"></i></div>
+                            <h4 class="clrchg">Loisirs</h4>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 focus-grid">
+                <a href="/categories/Services">
+                    <div class="focus-border">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i class="fa fa-shield"></i></div>
+                            <h4 class="clrchg">Services</h4>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 focus-grid">
+                <a href="/categories/Matériels Professionnels">
+                    <div class="focus-border">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i class="fa fa-cogs"></i></div>
+                            <h4 class="clrchg">Matériels Professionnels</h4>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 focus-grid">
+                <a href="/categories/Autres">
+                    <div class="focus-border">
+                        <div class="focus-layout">
+                            <div class="focus-image"><i class="fa fa-asterisk"></i></div>
+                            <h4 class="clrchg">Autres</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="trending-ads">
+        <div class="container">
+            <!-- slider -->
+            <div class="trend-ads">
+                <h2>Choisissez une ville</h2>
+                <h3>Tunisie</h3>
+                <a href="/villes/Tunis">Tunis</a>
+                <a href="/villes/Sousse">Sousse</a>
+                <a href="/villes/Sfax">Sfax</a>
+
+            </div>
+        </div>
+        <!-- //slider -->
+    </div>
+    <div class="trending-ads">
+        <div class="container">
+            <!-- slider -->
+            <div class="trend-ads">
+                <h2>Choisissez une boutique</h2>
+                <a ng-repeat='boutique in vm.boutiques' href="/boutiques/{{boutique.boutique}}">{{boutique.boutique}}</a>
+
+            </div>
+        </div>
+        <!-- //slider -->
+    </div>
+
+    <!--
+<!--footer section start-->
+    <footer ng-include="'views/partials/footer.html'">
+    </footer>
+    <!--footer section end-->
